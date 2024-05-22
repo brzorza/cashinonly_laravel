@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CAShINOnly</title>
     @vite('resources/css/app.css')
+    {{-- <link rel="stylesheet" href='/app/resources/css/app.css'> --}}
 </head>
 <body class="bg-gray-900 text-white">
 
-    <div class="fixed top-0 w-full">
+    <div class="relative top-0 w-full">
         <nav class="relative top-0 bg-gray-900 text-white shadow">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
@@ -18,6 +19,9 @@
                             <a href="/" class="text-xl font-bold text-white"><span class="text-green-400"><span class="logo-capital">C</span>as</span>h<span class="text-green-400"><span class="logo-capital">I</span>n<span class="logo-capital">O</span></span>nly</a>
                         </div>
                         <div class="hidden md:flex md:ml-6 md:space-x-8">
+                            @auth
+                            <a href="/games" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Games</a>
+                            @endauth
                             <a href="#" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
                             <a href="#" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Scoreboard</a>
                         </div>
@@ -52,17 +56,19 @@
             </div>
 
             <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="md:hidden hidden" id="mobile-menu">
+            <div class="md:hidden hidden fixed w-full bg-gray-900" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    @auth
+                    <a href="/games" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Games</a>
+                    @endauth
                     <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
                     <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Scoreboard</a>
-                    <a href="#" class="text-white hover:text-green-500 text-primary block px-3 py-2 rounded-md text-base font-medium">Games</a>
                     @auth
                         <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{auth()->user()->name}}</a>
                         <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Credits</a>
-                        <form method="POST" action="/logout">
+                        <form method="POST" action="/logout" class="pl-3">
                             @csrf
-                            <input type="submit" value="Logout" class="text-white logout-form-input hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">
+                            <input type="submit" value="Logout" class="text-white p-0 hover:text-green-500 block py-2 rounded-md text-base font-medium">
                         </form>
                     @else
                         <a href="/register" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Register</a>

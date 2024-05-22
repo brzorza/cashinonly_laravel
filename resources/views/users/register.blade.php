@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex pt-20 items-center justify-center">
         <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-8">
             <h2 class="text-2xl font-bold mb-6 text-white">Register</h2>
             <form action="/users" method="POST">
