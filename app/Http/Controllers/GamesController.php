@@ -9,11 +9,11 @@ use Illuminate\Validation\Rule;
 class GamesController extends Controller
 {
     // Show all listings
-    public function index() {
+    public function show() {
 
         $games = Game::all();
 
-        return view('games.show', compact('games'));
+        return view('games.games', compact('games'));
     }
 
 }

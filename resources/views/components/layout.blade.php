@@ -29,7 +29,7 @@
                     <div class="hidden md:flex md:items-center md:space-x-8">
                         @auth
                         <a href="#" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">{{auth()->user()->name}}</a>
-                        <a href="#" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Credits</a>
+                        <a href="/credits" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Credits</a>
                         <form method="POST" action="/logout" class="px-1 pt-1">
                             @csrf
                             <input type="submit" value="Logout" class="text-white logout-form-input hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">
@@ -65,7 +65,7 @@
                     <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Scoreboard</a>
                     @auth
                         <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{auth()->user()->name}}</a>
-                        <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Credits</a>
+                        <a href="/credits" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Credits</a>
                         <form method="POST" action="/logout" class="pl-3">
                             @csrf
                             <input type="submit" value="Logout" class="text-white p-0 hover:text-green-500 block py-2 rounded-md text-base font-medium">
