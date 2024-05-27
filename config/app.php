@@ -2,6 +2,10 @@
 
 return [
 
+    // 'providers' => [
+    //     App\Providers\ViewCreditsProvider::class,
+    // ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

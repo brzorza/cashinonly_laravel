@@ -34,7 +34,7 @@ class CreditsController extends Controller
     public function payout(Request $request){
                 
         $amount = $request->validate([
-            'amount' => 'required|integer|max:100',
+            'amount' => 'required|integer',
         ]);
 
         $user = User::findOrFail(auth()->id());
