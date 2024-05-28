@@ -20,8 +20,8 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // User Profile
-Route::get('/user/edit', [UserProfileController::class , 'showEdit']);
-Route::post('/user/edit', [UserProfileController::class , 'edit']);
+Route::get('/users/edit', [UserProfileController::class , 'showEdit']);
+Route::post('/users/edit', [UserProfileController::class , 'edit']);
 
 // Credits
 Route::get('/credits', [CreditsController::class, 'show']);
