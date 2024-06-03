@@ -3,12 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\CreditsController;
 use App\Http\Controllers\UserProfileController;
 
 Route::get('/', function () {
     return view('pages.home');
 });
+
+// Users Scoreboard
+Route::get('/scoreboard' , [PagesController::class, 'scoreboard']);
 
 // Login Register Logout
 Route::get('/login', [UserController::class, 'login']);

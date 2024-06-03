@@ -10,3 +10,8 @@
     padding: 0;
     font-size: 14px;
 }
+
+/* Scoreboard */
+.scoreboard-custom-bg:nth-child(2n){
+    @apply bg-slate-800;
+}

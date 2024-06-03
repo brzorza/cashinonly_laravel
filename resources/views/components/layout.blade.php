@@ -23,7 +23,7 @@
                             <a href="/games" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Games</a>
                             @endauth
                             <a href="#" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
-                            <a href="#" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Scoreboard</a>
+                            <a href="/scoreboard" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Scoreboard</a>
                         </div>
                     </div>
                     <div class="hidden md:flex md:items-center md:space-x-8">
@@ -62,7 +62,7 @@
                     <a href="/games" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Games</a>
                     @endauth
                     <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
-                    <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Scoreboard</a>
+                    <a href="/scoreboard" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Scoreboard</a>
                     @auth
                         <a href="/users/edit" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{auth()->user()->name}}</a>
                         <a href="/credits" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{$userCredits}} Credits</a>
