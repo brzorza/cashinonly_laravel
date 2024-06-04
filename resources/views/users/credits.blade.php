@@ -11,7 +11,7 @@
                     <input type="number" id="amount" name="amount" class="w-full px-3 py-2 border rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" required 
                     value={{old('amount')}}>
                     @error('amount')
-                        <p class="text-red-500 text-xs-mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
                 <div class="flex items-center justify-between">
@@ -29,10 +29,10 @@
                     <input type="number" id="amount" name="amount" class="w-full px-3 py-2 border rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" required 
                     value={{old('amount')}}>
                     @error('amount1')
-                        <p class="text-red-500 text-xs-mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                     @error('nocredits')
-                        <p class="text-red-500 text-xs-mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
                 <div class="flex items-center justify-between">

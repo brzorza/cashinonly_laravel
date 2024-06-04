@@ -14,7 +14,7 @@
                         <tr class="border-b bg-gray-900 scoreboard-custom-bg">
                             <td class="py-2 px-4 text-center">{{ ($users->currentPage() - 1) * $users->perPage() + $index + 1 }}</td>
                             <td class="py-2 px-4 text-center">{{$user->name}}</td>
-                            <td class="py-2 px-4 text-center">{{$user->total}}</td>
+                            <td class="py-2 px-4 text-center">{{ number_format($user->total, 2, '.', ' ') }}</td>
                         </tr>
                     @endforeach
                 </tbody>

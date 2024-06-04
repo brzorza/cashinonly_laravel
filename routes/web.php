@@ -34,3 +34,5 @@ Route::post('/credits/payout', [CreditsController::class, 'payout']);
 
 // Games
 Route::get('/games', [GamesController::class, 'show']);
+Route::get('/games/dice_roll', [GamesController::class, 'dice_roll']);
+Route::post('/games/dice_roll', [GamesController::class, 'roll_dice_bet']);

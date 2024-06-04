@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    font-family: "Quicksand", sans-serif;
+}
+
 .logo-capital{
     font-size: 23px;
 }

@@ -7,6 +7,11 @@
     <title>CAShINOnly</title>
     @vite('resources/css/app.css')
     {{-- <link rel="stylesheet" href='/app/resources/css/app.css'> --}}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
 </head>
 <body class="bg-gray-900 text-white">
 
@@ -29,7 +34,7 @@
                     <div class="hidden md:flex md:items-center md:space-x-8">
                         @auth
                         <a href="/users/edit" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">{{auth()->user()->name}}</a>
-                        <a href="/credits" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">{{$userCredits}} Credits</a>
+                        <a href="/credits" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">{{ number_format($userCredits, 2, '.', ' ') }}cr</a>
                         <form method="POST" action="/logout" class="px-1 pt-1">
                             @csrf
                             <input type="submit" value="Logout" class="text-white logout-form-input hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">
@@ -65,7 +70,7 @@
                     <a href="/scoreboard" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Scoreboard</a>
                     @auth
                         <a href="/users/edit" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{auth()->user()->name}}</a>
-                        <a href="/credits" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{$userCredits}} Credits</a>
+                        <a href="/credits" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{ number_format($userCredits, 2, '.', ' ') }}cr</a>
                         <form method="POST" action="/logout" class="pl-3">
                             @csrf
                             <input type="submit" value="Logout" class="text-white p-0 hover:text-green-500 block py-2 rounded-md text-base font-medium">
@@ -78,6 +83,8 @@
             </div>
         </nav>
     </div>
+
+    <x-flash-message />
 
     <main >
         {{$slot}}
