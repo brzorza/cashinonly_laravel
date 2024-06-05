@@ -9,13 +9,13 @@
                     </button>
 
                     <label for="guessed_number" class="mt-4 text-center">Geuess the number!</label>
-                    <input type="number" name="guessed_number" id="guessed_number" class="mt-1 mx-auto w-1/2 text-gray-900" value='1'>
+                    <input type="number" name="guessed_number" id="guessed_number" class="mt-1 mx-auto w-1/2 text-gray-900 p-1 text-xl font-semibold" value='1'>
                     @error('guessed_number')
                         <p class="text-red-500 text-xs mt-1 text-center">{{$message}}</p>
                     @enderror
 
                     <label for="guessed_number" class="mt-4 text-center">Bet amount</label>
-                    <input type="number" name="bet_amount" id="bet_amount" class="mt-1 mx-auto w-1/2 text-gray-900" value='1'>
+                    <input type="number" name="bet_amount" id="bet_amount" class="mt-1 mx-auto w-1/2 text-gray-900 p-1 text-xl font-semibold" value='10'>
                     @error('bet_amount')
                         <p class="text-red-500 text-xs mt-1 text-center">{{$message}}</p>
                     @enderror

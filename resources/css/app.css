@@ -6,6 +6,31 @@
     font-family: "Quicksand", sans-serif;
 }
 
+/* Flash message animation */
+.animated-border-bottom::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    width: 97%;
+    height: 2px;
+    @apply bg-green-800;
+    animation: disappear 4s forwards;
+}
+
+@keyframes disappear {
+    0% {
+        width: 0;
+        /* opacity: 1; */
+    }
+    100% {
+        width: 100%;
+        /* opacity: 1; */
+    }
+}
+
+/* Logo */
 .logo-capital{
     font-size: 23px;
 }
@@ -19,3 +44,4 @@
 .scoreboard-custom-bg:nth-child(2n){
     @apply bg-slate-800;
 }
+
