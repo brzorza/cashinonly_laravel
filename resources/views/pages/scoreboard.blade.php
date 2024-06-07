@@ -1,6 +1,7 @@
 <x-layout>
     <div class="flex pt-20 items-center justify-center">
-        <div class="w-full max-w-xl bg-gray-800 rounded-lg shadow-md p-8">
+        <div class="w-full max-w-xl bg-gray-800 rounded-lg shadow-md px-12 py-5">
+            <h1 class="text-center text-5xl font-semibold mb-8">Scoreboard!</h1>
             <table class="min-w-full rounded-lg shadow-md">
                 <thead>
                     <tr class="bg-green-500 text-white rounded-lg">

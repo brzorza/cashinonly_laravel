@@ -12,21 +12,31 @@
     display: block;
     position: absolute;
     bottom: 0;
-    left: 2%;
-    width: 97%;
-    height: 2px;
+    left: 1%;
+    width: 96%;
+    height: 3px;
     @apply bg-green-800;
+    animation: disappear 4s forwards;
+}
+
+.animated-border-bottom-fail::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    width: 96%;
+    height: 3px;
+    @apply bg-red-800;
     animation: disappear 4s forwards;
 }
 
 @keyframes disappear {
     0% {
         width: 0;
-        /* opacity: 1; */
     }
     100% {
         width: 100%;
-        /* opacity: 1; */
     }
 }
 

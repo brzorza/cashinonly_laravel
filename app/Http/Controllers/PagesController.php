@@ -13,4 +13,8 @@ class PagesController extends Controller
 
         return view('pages.scoreboard', compact('users'));
     }
+
+    public function about(){
+        return view('pages.about');
+    }
 }

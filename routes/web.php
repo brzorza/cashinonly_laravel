@@ -11,7 +11,8 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-// Users Scoreboard
+// About / Users Scoreboard
+Route::get('/about' , [PagesController::class, 'about']);
 Route::get('/scoreboard' , [PagesController::class, 'scoreboard']);
 
 // Login Register Logout
@@ -34,5 +35,9 @@ Route::post('/credits/payout', [CreditsController::class, 'payout']);
 
 // Games
 Route::get('/games', [GamesController::class, 'show']);
+
 Route::get('/games/dice_roll', [GamesController::class, 'dice_roll']);
-Route::post('/games/dice_roll', [GamesController::class, 'roll_dice_bet']);
+Route::post('/games/dice_roll', [GamesController::class, 'dice_roll_bet']);
+
+Route::get('/games/bombs', [GamesController::class, 'bombs']);
+Route::post('/games/bombs', [GamesController::class, 'bombs_bet']);

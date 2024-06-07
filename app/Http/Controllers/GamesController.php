@@ -21,7 +21,7 @@ class GamesController extends Controller
         return view('games.dice_roll');
     }
 
-    public function roll_dice_bet(Request $request){
+    public function dice_roll_bet(Request $request){
         
         $user = User::findOrFail(auth()->id());
         $game = Game::where('name', 'dice_roll')->first();
@@ -51,7 +51,10 @@ class GamesController extends Controller
             $user->save();
             $game->save();
             
-            return back()->with('message', 'Number was ' . $randomNumber . '. You have won ' . $formfields['bet_amount'] * $game->multiplier . 'cr!');
+            return back()->with([
+                'message' => 'Number was ' . $randomNumber . '. You have won ' . $formfields['bet_amount'] * $game->multiplier . 'cr!',
+                'randomNumber' => $randomNumber
+            ]);
         }else{
 
             $user->credits -= $formfields['bet_amount'];
@@ -61,8 +64,25 @@ class GamesController extends Controller
             $user->save();
             $game->save();
 
-            return back()->with('message', 'Number was ' . $randomNumber . '. You have lost ' . $formfields['bet_amount'] . 'cr!');
+            return back()->with([
+                'message-fail' => 'Number was ' . $randomNumber . '. You have lost ' . $formfields['bet_amount'] . 'cr!',
+                'randomNumber' => $randomNumber
+            ]);
         }
 
+    }
+
+    public function bombs(Request $request){
+        return view('/games/bombs');
+    }
+
+    public function bombs_bet(Request $request){
+
+        $formFields = $request->validate([
+            'board_size' => 'required|integer|between:4,7',
+            'bombs_number' => 'required|integer'
+        ]);
+
+        return view('/games/bombs')->with('');
     }
 }

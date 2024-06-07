@@ -28,7 +28,7 @@
                             @auth
                             <a href="/games" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Games</a>
                             @endauth
-                            <a href="#" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
+                            <a href="/about" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">About</a>
                             <a href="/scoreboard" class="text-white hover:text-green-500 inline-flex items-center px-1 pt-1 text-sm font-medium">Scoreboard</a>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     @auth
                     <a href="/games" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Games</a>
                     @endauth
-                    <a href="#" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                    <a href="/about" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
                     <a href="/scoreboard" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">Scoreboard</a>
                     @auth
                         <a href="/users/edit" class="text-white hover:text-green-500 block px-3 py-2 rounded-md text-base font-medium">{{auth()->user()->name}}</a>
@@ -86,6 +86,7 @@
     </div>
 
     <x-flash-message />
+    <x-flash-message-fail />
 
     <main >
         {{$slot}}
