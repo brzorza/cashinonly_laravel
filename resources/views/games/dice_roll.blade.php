@@ -11,7 +11,7 @@
 
                     <label for="guessed_number" class="mt-4 text-center">Choose your number!</label>
                     <input type="hidden" name="guessed_number" id="guessed_number" value='1'>
-                    <div class="w-3/4 mx-auto flex space-x-4 px-4 py-2 shadow-lg">
+                    <div class="w-3/4 mx-auto flex space-x-4 px-4 py-2">
                         @for ($i = 1; $i <= 6; $i++)
                             <div class="input-box flex items-center aspect-square justify-center w-1/6 h-auto rounded-lg cursor-pointer text-white bg-emerald-500"
                                 onclick="changeInputValue(this)">
@@ -24,7 +24,28 @@
                     @enderror
 
                     <label for="guessed_number" class="mt-4 text-center">Bet amount</label>
-                    <input type="number" name="bet_amount" id="bet_amount" class="mt-1 mx-auto w-1/2 text-gray-900 p-1 text-xl font-semibold" value='10'>
+                    <input type="hidden" name="bet_amount" id="bet_amount" class="mt-1 mx-auto w-1/2 text-gray-900 p-1 text-xl font-semibold" value='10'>
+                    <div class="amount-wrapper w-3/4 mx-auto flex space-x-1 justify-center px-4 py-2">
+                        <div class="input-box flex items-center aspect-square justify-center w-14 h-14 my-auto rounded-lg cursor-pointer text-white bg-emerald-500"
+                                onclick="updateAmountValue(1)">
+                                    +1
+                        </div>
+                        <div class="input-box flex items-center aspect-square justify-center w-16 h-16 my-auto rounded-lg cursor-pointer text-white bg-emerald-500"
+                                onclick="updateAmountValue(5)">
+                                    +5
+                        </div>
+                        <div class="bet_amount input-box flex items-center aspect-square justify-center w-20 h-20 my-auto text-2xl font-semibold rounded-lg cursor-pointer text-white bg-green-600">
+                            10
+                        </div>
+                        <div class="input-box flex items-center aspect-square justify-center w-16 h-16 my-auto rounded-lg cursor-pointer text-white bg-emerald-500"
+                                onclick="updateAmountValue(-5)">
+                                    -5
+                        </div>
+                        <div class="input-box flex items-center aspect-square justify-center w-14 h-14 my-auto rounded-lg cursor-pointer text-white bg-emerald-500"
+                                onclick="updateAmountValue(-1)">
+                                    -1
+                        </div>
+                    </div>
                     @error('bet_amount')
                         <p class="text-red-500 text-xs mt-1 text-center">{{$message}}</p>
                     @enderror
@@ -51,5 +72,25 @@
 
         element.classList.add('bg-emerald-700');
         element.classList.remove('bg-emerald-500');
+    }
+
+    function updateAmountValue(amount) {
+
+        amount_input = document.getElementById('bet_amount');
+        amount_display = document.querySelector('.bet_amount');
+
+        if(amount == -5 && parseInt(amount_input.value) < 5 && parseInt(amount_display.textContent) < 5){
+
+        }else if(amount == -1 && parseInt(amount_input.value) < 1 && parseInt(amount_display.textContent) < 1){
+
+        }else if(amount == 1 && parseInt(amount_input.value) >= 100 && parseInt(amount_display.textContent) >= 100){
+
+        }else if(amount == 5 && parseInt(amount_input.value) >= 96 && parseInt(amount_display.textContent) >= 96){
+
+        }else{
+            amount_input.value = amount + parseInt(amount_input.value);
+            amount_display.textContent = parseInt(amount_display.textContent) + amount;
+        }
+
     }
 </script>

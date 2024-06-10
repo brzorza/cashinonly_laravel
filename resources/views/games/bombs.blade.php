@@ -7,10 +7,15 @@
             <div class="flex flex-col w-2/3">
                 <div class="w-full h-full p-8 flex flex-col items-center">
                     <h2 class="text-2xl font-bold mb-10 text-white">Board</h2>
-                    <div class="w-full h-auto aspect-square bg-gray-900 px-5 py-4 rounded-lg shadow-md max-w-md">
+                    <div class="w-full h-auto aspect-square bg-gray-900 px-5 py-5 rounded-lg shadow-md max-w-md">
 
                         <div class="grid grid-cols-{{session('randomNumber') ? session('randomNumber') : '4'}} gap-2 p-4 aspect-square shadow-lg h-full">
-                            <div class="flex items-center justify-center aspect-square bg-blue-500 text-white rounded-lg">1</div>
+                            @for ($i = 1; $i <= 4*4; $i++)
+                                    <div class="flex items-center justify-center aspect-square bg-blue-500 text-white rounded-lg">
+                                        {{$i}}
+                                        <input name='{{$i}}' type='hidden' value='{{$i}}'>
+                                    </div>
+                            @endfor
                         </div>
 
                     </div>
