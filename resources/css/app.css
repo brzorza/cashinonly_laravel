@@ -6,6 +6,10 @@
     font-family: "Quicksand", sans-serif;
 }
 
+.check-bg{
+    accent-color: rgb(34, 198, 94);
+}
+
 /* Flash message animation */
 .animated-border-bottom::after {
     content: '';

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\CreditsController;
@@ -11,9 +12,14 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-// About / Users Scoreboard
+// About / Scoreboard
 Route::get('/about' , [PagesController::class, 'about']);
 Route::get('/scoreboard' , [PagesController::class, 'scoreboard']);
+
+// Forum
+Route::get('/forum', [ForumController::class , 'show']);
+Route::get('/forum/create', [ForumController::class , 'create']);
+Route::post('/forum/create', [ForumController::class , 'store']);
 
 // Login Register Logout
 Route::get('/login', [UserController::class, 'login']);

@@ -23,7 +23,7 @@
             </div>
 
             <div class="flex flex-col w-1/3 items-center justify-start">
-                <div class="w-full p-8">
+                <div class="w-full py-8 pl-2 pr-8">
                     <h2 class="text-2xl font-bold mb-10 text-white">Edit your profile</h2>
                         @csrf
                         <div class="mb-4">
