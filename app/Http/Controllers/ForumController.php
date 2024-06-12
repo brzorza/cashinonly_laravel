@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ForumController extends Controller
 {
     public function show(){
-        return view('forum.index');
+        return view('forum.index', ['posts' => Post::with('user')->get()]);
     }
 
     public function create(){

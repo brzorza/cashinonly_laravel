@@ -21,4 +21,8 @@ class Post extends Model
         'author_id',
     ];
 
+    // Relation to user
+    public function user(){
+        return $this->belongsTo(User::class, 'author_id');
+    }
 }

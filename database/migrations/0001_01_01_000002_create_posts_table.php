@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id()->primary();
+            $table->foreignId('author_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('body');
             $table->boolean('anonymous');
             $table->timestamp('creation_date');
-            $table->integer('author_id');
             $table->timestamps();
         });
     }
